@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+    <h1>{{ currency.attributes.code | uppercase }} Details</h1>
+</div>
+<div class="row">
+    <ul>
+        <li *ngFor="let attribute of attributes">
+            <span>{{attribute}}: {{currency.attributes[attribute]}}</span>
+        </li>
+    </ul>
+</div></div>

@@ -1,0 +1,52 @@
+
+<div class="main-app container">
+    <h1>
+        {{ title }}
+    </h1>
+    <div class="search-header">
+        <input (change)="navigateTo(1)"
+                  [(ngModel)]="filterValue"  placeholder="search">
+            <select name="filterName" 
+                (change)="navigateTo(1)"
+                  [(ngModel)]="filterName">
+                <option *ngFor="let filterName of filterNames" 
+                    [ngValue]="filterName" >
+                    {{filterName}}
+                </option>
+            </select>
+    <div class="row">
+        <ul class="currencies">
+            <li *ngFor="let currency of currencies" 
+                routerLink="/currency/{{currency.id}}"
+                [class.selected]="currency === selectedCurrency"
+                 class="col-md-2 col-sm-3 col-6">
+                <div class="preview">
+
+                    ID: <div class="preview-id">{{currency.id}}</div>
+
+                    Type: <div class="preview-type">{{currency.attributes.currency_type}}</div>
+
+                    Symbol: <div class="preview-symbol">{{currency.attributes.symbol}}</div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="pagination-footer">
+          <select name="pageSize" 
+                (change)="navigateTo(1)"
+                  [(ngModel)]="pageSize">
+            <option *ngFor="let pageSize of pageSizes" 
+                [ngValue]="pageSize" >
+                {{pageSize}}
+            </option>
+          </select>
+            <button (click)="navigateTo(1)">First</button>
+            <button [disabled]="currentPage==1"
+                    (click)="navigateTo(currentPage-1)">Preview</button>
+            <span>{{currentPage}}</span>
+            <button [disabled]="currentPage==maxPage"
+                    (click)="navigateTo(currentPage+1)">Next</button>
+            <button (click)="navigateTo(maxPage)">Last {{maxPage}}</button>
+    </div>
+</div>

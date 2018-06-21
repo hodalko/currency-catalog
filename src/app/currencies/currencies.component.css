@@ -1,0 +1,56 @@
+
+
+h1{
+    display: inline-block;
+    margin: 30px;
+    width: 425px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    background-color: gold;
+    text-shadow: white;
+    color: silver;
+}
+
+.currencies{
+    text-align: left;
+}
+ul{
+    padding-left: 0px;
+      display: inline-block;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+.preview {
+    background: #d2cfcf;
+    display: inline-block;
+    margin: 2px 3px;
+    padding: 2px 4px;
+    
+    border: solid 1px gray;
+    
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+.preview > div {
+    display: inline-block;
+    margin: 2px;
+}
+
+.preview-id{
+    min-width: 100px;
+}
+.preview-type{
+    min-width: 60px;
+}
+.preview-symbol{
+    text-align: left;
+    min-width: 60px;
+}
+.selected > div {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.main-app{
+    text-align: center;
+}
